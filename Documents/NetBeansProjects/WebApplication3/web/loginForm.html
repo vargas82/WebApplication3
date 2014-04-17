@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   <HEAD>
+        <TITLE>Login using jsp</TITLE>
+    </HEAD>
+ 
+    <BODY>
+        <H1>LOGIN FORM</H1>
+        <%
+        String name =  (String)session.getAttribute("username");
+        
+        if(name!=null)
+            {
+            
+             out.print("Welcome  "+name+"  , <a href=\"logout.jsp\" >Logout</a>");
+            }
+        else 
+            {
+            %>
+            <form action="checkLogin.jsp">
+                <table>
+                    <tr>
+                        <td> Username  : </td><td> <input name="username" size=15 type="text" /> </td> 
+                    </tr>
+                    <tr>
+                        <td> Password  : </td><td> <input name="password" size=15 type="text" /> </td> 
+                    </tr>
+                </table>
+                <input type="submit" value="login" />
+            </form>
+            <% 
+            }
+         
+             
+            %>
+         
+    </BODY>
+
+</html>
